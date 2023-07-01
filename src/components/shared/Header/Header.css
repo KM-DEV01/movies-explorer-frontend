@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+  background-color: #073042;
+}
+
+.header__buttons {
+  display: flex;
+  gap: 20px;
+  padding-top: 21px;
+}
+
+.header__buttons_logged-in {
+  gap:6px;
+  padding-top: 21px;
+}
+
+.header__button {
+  border: none;
+  width: 76px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  border-radius: 3px;
+  padding: 0;
+}
+
+.header__button_default {
+  color: #ffffff;
+  width: fit-content;
+  padding: 0 10px;
+}
+
+.header__button_default:hover {
+  background-color: rgba(0, 0, 0, .15);
+}
+
+.header__button_colored {
+  background-color: #3DDC84;
+}
+
+.header__button_colored:hover {
+  opacity: 75%;
+}
+
+.header__links {
+  display: flex;
+  gap: 16px
+}
+
+.header__link {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
