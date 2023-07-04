@@ -1,6 +1,6 @@
 .techs {
-  padding: 100px 70px 0 70px;
-  height: 525px;
+  padding: 100px 70px 100px 70px;
+  /*height: 525px;*/
   background-color: #272727;
 }
 
@@ -9,7 +9,7 @@
   font-size: 22px;
   font-weight: 400;
   letter-spacing: -.8px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .techs__stroke {
@@ -30,7 +30,7 @@
   margin: 0;
   line-height: 58px;
   max-width: 600px;
-  letter-spacing: -2.3px;
+  letter-spacing: -2px;
 }
 
 .techs__info-text {
@@ -39,7 +39,7 @@
   margin: 26px 0 0 0;
   line-height: 20px;
   max-width: 460px;
-  letter-spacing: -.6px;
+  letter-spacing: -.54px;
 }
 
 .techs__list {

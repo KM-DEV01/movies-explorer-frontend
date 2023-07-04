@@ -1,6 +1,6 @@
 import React from 'react';
 import './Portfolio.css';
-import link from '../../../images/link.svg';
+import linkIcon from '../../../images/icons/link-min.svg';
 
 function Portfolio() {
   return (
@@ -11,7 +11,7 @@ function Portfolio() {
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="portfolio__list-link" href="#">
             Статичный сайт
-            <img className="portfolio__link-icon" src={link} alt="Иконка ссылки" />
+            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
           </a>
           <hr className="portfolio__stroke" />
         </li>
@@ -19,7 +19,7 @@ function Portfolio() {
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="portfolio__list-link" href="#">
             Адаптивный сайт
-            <img className="portfolio__link-icon" src={link} alt="Иконка ссылки" />
+            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
           </a>
           <hr className="portfolio__stroke" />
         </li>
@@ -27,7 +27,7 @@ function Portfolio() {
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="portfolio__list-link" href="#">
             Одностраничное приложение
-            <img className="portfolio__link-icon" src={link} alt="Иконка ссылки" />
+            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
           </a>
         </li>
       </ul>

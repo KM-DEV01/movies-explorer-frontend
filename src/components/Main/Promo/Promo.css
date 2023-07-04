@@ -1,8 +1,7 @@
 .promo {
   display: flex;
-  padding: 55px 50px 0 70px;
+  padding: 55px 50px 75px 70px;
   background-color: #073042;
-  height: 498px;
 }
 
 .promo__logo {

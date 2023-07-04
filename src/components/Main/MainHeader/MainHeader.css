@@ -1,0 +1,48 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+  background-color: #073042;
+}
+
+.main-header__logo {
+  height: 76px;
+  width: 76px;
+  padding-top: 18px;
+}
+
+.main-header__buttons {
+  display: flex;
+  gap: 20px;
+  padding-top: 21px;
+}
+
+.main-header__button {
+  border: none;
+  width: 76px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  border-radius: 3px;
+  padding: 0;
+}
+
+.main-header__button_default {
+  color: #ffffff;
+  width: fit-content;
+  padding: 0 10px;
+}
+
+.main-header__button_default:hover {
+  background-color: rgba(0, 0, 0, .15);
+}
+
+.main-header__button_colored {
+  background-color: #3DDC84;
+}
+
+.main-header__button_colored:hover {
+  opacity: 75%;
+}

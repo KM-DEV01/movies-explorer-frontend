@@ -1,0 +1,23 @@
+.button-panel {
+  padding: 50px 70px 80px 70px;
+}
+
+.button-panel_empty {
+  padding: 60px 70px 177px 70px;
+}
+
+.button-panel__more {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  background: #2F2F2F;
+  border: none;
+  height: 36px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.button-panel__more:hover {
+  background-color: rgba(0, 0, 0, 15%);
+}

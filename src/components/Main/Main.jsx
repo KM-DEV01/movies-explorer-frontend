@@ -1,8 +1,9 @@
 import React from 'react';
 import './Main.css';
 
-import Header from '../shared/Header/Header';
-import Footer from '../shared/Footer/Footer';
+import Footer from '../widgets/Footer/Footer';
+
+import MainHeader from './MainHeader/MainHeader';
 
 import Promo from './Promo/Promo';
 import AboutProject from './AboutProject/AboutProject';
@@ -12,15 +13,15 @@ import Portfolio from './Portfolio/Portfolio';
 
 function Main() {
   return (
-    <main className="container">
-      <Header />
+    <>
+      <MainHeader />
       <Promo />
       <AboutProject />
       <Techs />
       <AboutMe />
       <Portfolio />
       <Footer />
-    </main>
+    </>
   );
 }
 

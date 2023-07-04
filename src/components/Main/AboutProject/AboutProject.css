@@ -1,6 +1,5 @@
 .about-project {
-  height: 498px;
-  padding: 112px 70px 0 70px;
+  padding: 112px 70px 111px 70px;
 }
 
 .about-project__title {
@@ -27,6 +26,7 @@
   max-width: 550px;
   letter-spacing: -.8px;
   font-size: 20px;
+  line-height: 24px;
 }
 
 .about-project__list-element {

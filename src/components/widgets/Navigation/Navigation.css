@@ -1,0 +1,36 @@
+.navigation__links {
+  display: flex;
+  gap: 18px
+}
+
+.navigation__link {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.navigation__profile-button {
+  display: flex;
+  border: none;
+  height: 32px;
+  width: 100px;
+  align-items: center;
+  border-radius: 40px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  padding: 0 3px 0 11px;
+  gap: 8px
+}
+
+.navigation__profile-button:hover {
+  background-color: rgba(0, 0, 0, 15%);
+}
+
+.navigation__profile-icon {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background:  #313131 url("../../../images/icons/profile-icon-min.svg") no-repeat center;
+}

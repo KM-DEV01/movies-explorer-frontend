@@ -1,6 +1,6 @@
 .about-me {
-  padding: 110px 70px 0 70px;
-  height: 444px;
+  padding: 110px 70px 51px 70px;
+  /*height: 444px;*/
 }
 
 .about-me__title {
@@ -52,6 +52,7 @@
   font-size: 14px;
   font-weight: 500;
   margin: 99px 0 0 0;
+  line-height: 19px;
 }
 
 .about-me__avatar {
