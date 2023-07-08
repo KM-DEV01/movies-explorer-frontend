@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Profile.css';
+
 import Header from '../widgets/Header/Header';
 
 function Profile() {
@@ -18,10 +20,8 @@ function Profile() {
           <p>gosling@mail.ru</p>
         </div>
         <div className="profile__buttons">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="profile__button">Редактировать</a>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="profile__button profile__button_exit">Выйти из аккаунта</a>
+          <button className="profile__button" type="submit">Редактировать</button>
+          <Link to="/sign-in" className="profile__button profile__button_exit">Выйти из аккаунта</Link>
         </div>
       </section>
     </>

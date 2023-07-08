@@ -14,3 +14,12 @@
   flex-direction: column;
   gap: 10px;
 }
+
+@media screen and (max-width: 500px) {
+  .register {
+    padding: 0 30px;
+  }
+  .register__form {
+    gap: 157px;
+  }
+}

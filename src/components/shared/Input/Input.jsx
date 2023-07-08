@@ -1,7 +1,6 @@
 import React from 'react';
 import './Input.css';
 
-// eslint-disable-next-line react/prop-types
 function Input({ inputName = '', errorText = '', inputType = 'text' }) {
   return (
     <div className="input">

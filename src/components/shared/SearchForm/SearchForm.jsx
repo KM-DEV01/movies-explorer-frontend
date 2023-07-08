@@ -7,7 +7,7 @@ function SearchForm() {
     <form className="search">
       <div className="search__container">
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label className="search__icon" htmlFor="search-input" />
+        <label className="search__icon" />
         <input className="search__input" id="search-input" type="text" placeholder="Фильм" />
         <button className="search__button" type="submit">Найти</button>
       </div>

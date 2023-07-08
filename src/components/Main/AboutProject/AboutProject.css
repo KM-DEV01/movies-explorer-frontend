@@ -1,13 +1,12 @@
 .about-project {
-  padding: 112px 70px 111px 70px;
+  padding: 110px 70px 111px 70px;
 }
 
 .about-project__title {
   margin: 0;
   font-size: 22px;
-  font-weight: 400;
   letter-spacing: -1px;
-  line-height: 24px;
+  line-height: 27px;
 }
 
 .about-project__stroke {
@@ -17,7 +16,8 @@
 
 .about-project__info {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 10px
 }
 
 .about-project__list {
@@ -30,12 +30,12 @@
 }
 
 .about-project__list-element {
-  margin: 26px 0 0 0;
+  margin-top: 26px;
   padding: 0;
   font-size: 14px;
-  letter-spacing: 0;
   line-height: 20px;
   list-style: none;
+  letter-spacing: 0;
 }
 
 .about-project__progress {
@@ -64,12 +64,86 @@
   background-color: #303030;
 }
 
-.about-project__line-text {
-  margin: 0;
-}
-
-.about-project__text {
+.about-project__caption {
   color: #8B8B8B;
   line-height: 17px;
   margin: 14px 0 0 0;
+}
+
+@media screen and (max-width: 928px) {
+  .about-project {
+    padding: 90px 50px 90px 50px;
+  }
+
+  .about-project__info {
+    gap: 30px;
+  }
+
+  .about-project__list {
+    max-width: 319px;
+  }
+
+  .about-project__list-element {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-project__progress {
+    margin-top: 93px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-project__info {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .about-project__list {
+    max-width: fit-content;
+  }
+
+  .about-project__progress {
+    margin-top: 60px;
+    font-size: 11px;
+    grid-template-columns: 1.8fr 3.2fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-project {
+    padding: 70px 18px 70px 18px;
+  }
+
+  .about-project__title {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -.8px;
+  }
+
+  .about-project__stroke {
+    margin: 28px 0 60px 0;
+  }
+
+  .about-project__list {
+    font-size: 18px;
+    line-height: 22px;
+    /*max-width: 284px;*/
+  }
+
+  .about-project__list-element {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-project__line {
+    height: 35px;
+  }
+
+  .about-project__caption {
+    margin-top: 10px;
+    line-height: 13px;
+  }
 }

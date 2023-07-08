@@ -9,11 +9,17 @@
   margin: 0 auto;
 }
 
+h1 {
+  margin: 0;
+}
+
 a, button {
   background: none;
   cursor: pointer;
   transition: all .2s ease-out;
   text-decoration: none;
+  border: none;
+  padding: 0;
 }
 
 a:hover {

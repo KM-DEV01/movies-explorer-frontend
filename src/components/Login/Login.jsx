@@ -1,9 +1,8 @@
 import React from 'react';
 import './Login.css';
-
 import AuthHeader from '../shared/AuthHeader/AuthHeader';
 import Input from '../shared/Input/Input';
-import FormButton from '../shared/FormButton/FormButton';
+import AuthControls from '../shared/AuthControls/AuthControls';
 
 function Login() {
   return (
@@ -14,7 +13,12 @@ function Login() {
           <Input inputName="E-mail" inputType="email" />
           <Input inputName="Пароль" inputType="password" />
         </div>
-        <FormButton submitButtonText="Войти" authButtonText="Регистрация" authLabel="Ещё не зарегистрированы?" />
+        <AuthControls
+          btnText="Войти"
+          captionText="Ещё не зарегистрированы?"
+          linkTo="/sign-up"
+          linkText="Регистрация"
+        />
       </form>
     </div>
   );

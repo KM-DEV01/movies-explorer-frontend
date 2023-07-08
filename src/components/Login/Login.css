@@ -14,3 +14,13 @@
   flex-direction: column;
   gap: 10px;
 }
+
+@media screen and (max-width: 500px) {
+  .login {
+    padding: 0 30px;
+  }
+
+  .login__form {
+    gap: 258px;
+  }
+}

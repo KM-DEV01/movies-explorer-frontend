@@ -1,9 +1,8 @@
 import React from 'react';
 import './Register.css';
-
 import AuthHeader from '../shared/AuthHeader/AuthHeader';
 import Input from '../shared/Input/Input';
-import FormButton from '../shared/FormButton/FormButton';
+import AuthControls from '../shared/AuthControls/AuthControls';
 
 function Register() {
   return (
@@ -15,7 +14,12 @@ function Register() {
           <Input inputName="E-mail" inputType="email" />
           <Input inputName="Пароль" inputType="password" errorText="Что-то пошло не так" />
         </div>
-        <FormButton submitButtonText="Зарегистрироваться" authButtonText="Войти" authLabel="Уже зарегистрированы?" />
+        <AuthControls
+          btnText="Зарегистрироваться"
+          captionText="Уже зарегистрированы?"
+          linkTo="/sign-in"
+          linkText="Войти"
+        />
       </form>
     </div>
   );

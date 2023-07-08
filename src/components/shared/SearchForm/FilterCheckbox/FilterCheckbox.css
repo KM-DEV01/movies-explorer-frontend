@@ -52,8 +52,17 @@
 
 .filter__property {
   margin-left: 12px;
-  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #ffffff;
+}
+
+@media screen and (max-width: 520px){
+  .filter {
+    margin-top: 42px;
+  }
+
+  .filter__property {
+    font-size: 11px;
+  }
 }

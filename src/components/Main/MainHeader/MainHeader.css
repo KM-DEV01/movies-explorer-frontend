@@ -11,10 +11,18 @@
   padding-top: 18px;
 }
 
-.main-header__buttons {
+.main-header__navs {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
   padding-top: 21px;
+  height: 32px;
+}
+
+.main-header__link {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .main-header__button {
@@ -24,25 +32,44 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  margin: 0;
   border-radius: 3px;
-  padding: 0;
-}
-
-.main-header__button_default {
-  color: #ffffff;
-  width: fit-content;
   padding: 0 10px;
-}
-
-.main-header__button_default:hover {
-  background-color: rgba(0, 0, 0, .15);
-}
-
-.main-header__button_colored {
   background-color: #3DDC84;
 }
 
-.main-header__button_colored:hover {
+.main-header__button:hover {
   opacity: 75%;
+}
+
+@media screen and (max-width: 928px)  {
+  .main-header {
+    padding: 0 30px;
+  }
+
+  .main-header__logo {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media screen and (max-width: 480px)  {
+  .main-header {
+    padding: 0 14px;
+  }
+
+  .main-header__navs {
+    gap: 14px;
+  }
+
+  .main-header__link {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .main-header__button {
+    height: 26px;
+    width: 54px;
+    font-size: 10px;
+    line-height: 16px;
+  }
 }

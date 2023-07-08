@@ -2,7 +2,6 @@ import React from 'react';
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-// eslint-disable-next-line react/prop-types
 function MoviesCardList({ isRemovable = false }) {
   return (
     <section className="movies-cards">
@@ -17,10 +16,10 @@ function MoviesCardList({ isRemovable = false }) {
             <MoviesCard />
             <MoviesCard />
             <MoviesCard isLiked />
-            <MoviesCard />
-            <MoviesCard />
-            <MoviesCard />
-            <MoviesCard />
+            {/* <MoviesCard /> */}
+            {/* <MoviesCard /> */}
+            {/* <MoviesCard /> */}
+            {/* <MoviesCard /> */}
           </>
         ) : (
           <>

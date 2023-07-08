@@ -25,15 +25,15 @@ function AboutProject() {
       <div className="about-project__progress">
         <div>
           <div className="about-project__line about-project__line_short">
-            <p className="about-project__line-text">1 неделя</p>
+            <p>1 неделя</p>
           </div>
-          <p className="about-project__text">Back-end</p>
+          <p className="about-project__caption">Back-end</p>
         </div>
         <div>
           <div className="about-project__line about-project__line_large">
-            <p className="about-project__line-text">4 недели</p>
+            <p>4 недели</p>
           </div>
-          <p className="about-project__text">Front-end</p>
+          <p className="about-project__caption">Front-end</p>
         </div>
       </div>
     </section>

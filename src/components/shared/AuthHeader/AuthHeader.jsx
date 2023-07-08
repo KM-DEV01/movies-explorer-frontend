@@ -1,12 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AuthHeader.css';
 import logo from '../../../images/logo.png';
 
-// eslint-disable-next-line react/prop-types
 function AuthHeader({ greet = '' }) {
+  const navigate = useNavigate();
   return (
     <header className="auth-header">
-      <img className="auth-header__logo" src={logo} alt="Логотип" />
+      <button type="button" onClick={() => navigate('/')}>
+        <img className="auth-header__logo" src={logo} alt="Логотип" />
+      </button>
       <h2 className="auth-header__title">{greet}</h2>
     </header>
   );

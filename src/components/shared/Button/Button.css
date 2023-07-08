@@ -21,3 +21,23 @@
 .button-panel__more:hover {
   background-color: rgba(0, 0, 0, 15%);
 }
+
+@media screen and (max-width: 768px) {
+  .button-panel {
+    padding: 47px 30px 80px 30px;
+  }
+
+  .button-panel_empty {
+    padding: 57px 70px 80px 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button-panel {
+    padding: 50px 10px 80px 10px;
+  }
+
+  .button-panel_empty {
+    padding: 57px 70px 80px 70px;
+  }
+}

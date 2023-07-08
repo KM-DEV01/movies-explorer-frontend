@@ -1,34 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Portfolio.css';
-import linkIcon from '../../../images/icons/link-min.svg';
 
 function Portfolio() {
   return (
     <section className="portfolio">
+      <h2 className="portfolio__title">Портфолио</h2>
       <ul className="portfolio__list">
-        Портфолио
         <li className="portfolio__list-element">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="portfolio__list-link" href="#">
+          <Link to="https://km-forprojects.github.io/how-to-learn/" className="portfolio__list-link" target="_blank" rel="noopener noreferrer">
             Статичный сайт
-            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
-          </a>
+            <span className="portfolio__link-icon" />
+          </Link>
           <hr className="portfolio__stroke" />
         </li>
         <li className="portfolio__list-element">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="portfolio__list-link" href="#">
+          <Link to="https://km-forprojects.github.io/russian-travel/" className="portfolio__list-link" target="_blank" rel="noopener noreferrer">
             Адаптивный сайт
-            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
-          </a>
+            <span className="portfolio__link-icon" />
+          </Link>
           <hr className="portfolio__stroke" />
         </li>
         <li className="portfolio__list-element">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="portfolio__list-link" href="#">
+          <Link to="https://km-forprojects.github.io/mesto/" className="portfolio__list-link" target="_blank" rel="noopener noreferrer">
             Одностраничное приложение
-            <img className="portfolio__link-icon" src={linkIcon} alt="Иконка ссылки" />
-          </a>
+            <span className="portfolio__link-icon" />
+          </Link>
         </li>
       </ul>
     </section>
