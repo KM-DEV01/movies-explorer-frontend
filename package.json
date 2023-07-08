@@ -16,7 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "lint": "npx eslint ."
+    "lint": "eslint \"**/*.{js,jsx}\""
   },
   "eslintConfig": {
     "extends": [

@@ -9,7 +9,7 @@
     "ecmaVersion": "latest"
   },
   "rules": {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": "off",
     "react/prop-types": "off"
   }
 }
