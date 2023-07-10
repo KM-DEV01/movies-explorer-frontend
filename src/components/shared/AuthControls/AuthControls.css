@@ -39,8 +39,13 @@
 }
 
 @media screen and (max-width: 420px) {
+  .auth-ctrl__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
   .auth-ctrl {
-    gap: 7px;
+    gap: 15px;
   }
 
   .auth-ctrl__caption {

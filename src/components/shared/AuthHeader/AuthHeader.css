@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 70px 0 40px 0;
-  gap: 40px;
+  gap: 38px;
 }
 
 .auth-header__logo {
@@ -22,17 +21,9 @@
   line-height: 29px;
 }
 
-
-@media screen and (max-width: 768px) {
-  .auth-header {
-    padding-top: 232px;
-  }
-}
-
 @media screen and (max-width: 420px) {
   .auth-header {
-    padding: 56px 0 80px 0;
     align-items: center;
-    gap: 50px;
+    gap: 48px;
   }
 }

@@ -12,9 +12,11 @@ function SavedMovies() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <MoviesCardList isRemovable />
-      <Button />
+      <main className="saved-movies">
+        <SearchForm />
+        <MoviesCardList isRemovable />
+        <Button />
+      </main>
       <Footer />
     </>
   );

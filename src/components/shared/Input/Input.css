@@ -14,7 +14,6 @@
 }
 
 .input__field {
-  border: none;
   border-radius: 8px;
   background: #2F2F2F;
   padding: 15px;
@@ -22,6 +21,14 @@
   line-height: 16px;
   margin: 10px 0;
   color: #ffffff;
+  box-sizing: border-box;
+  height: 46px;
+  transition: background .1s ease-out;
+  border: solid 2px #2F2F2F;
+}
+
+.input__field:hover, .input__field:focus {
+  background: #202020;
 }
 
 .input__field_error {

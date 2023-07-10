@@ -13,9 +13,11 @@ function Movies() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <MoviesCardList />
-      <Button cardsCount={cardsCount} />
+      <main className="movies">
+        <SearchForm />
+        <MoviesCardList />
+        <Button cardsCount={cardsCount} />
+      </main>
       <Footer />
     </>
   );

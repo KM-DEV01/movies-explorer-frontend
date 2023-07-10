@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 184px;
+  padding: 246px 0 60px 0;
 }
 
 .notFound__info {
@@ -10,7 +11,6 @@
   flex-direction: column;
   gap: 5px;
   align-items: center;
-  padding-top: 246px;
 }
 
 .notFound__title {
@@ -32,18 +32,18 @@
 }
 
 @media screen and (max-width: 768px) {
-  .notFound__info {
-    padding-top: 408px;
+  .notFound {
+    padding: 408px 0 30px 0;
   }
 }
 
 @media screen and (max-width: 520px) {
   .notFound {
     gap: 284px;
+    padding: 329px 0 30px 0;
   }
 
   .notFound__info {
-    padding-top: 329px;
     gap: 10px;
   }
 

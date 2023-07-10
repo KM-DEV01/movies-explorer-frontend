@@ -1,4 +1,3 @@
-@import url(./vendor/reset.css);
 @import url(./vendor/normalize.css);
 
 @import url(./vendor/inter_font/font.css);
@@ -9,17 +8,25 @@
   margin: 0 auto;
 }
 
-h1 {
+div, span,
+h1, h2, h3, p,
+a, ul, li, form, label,
+nav, section, button {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 400;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  border: 0;
 }
 
 a, button {
   background: none;
   cursor: pointer;
   transition: all .2s ease-out;
-  text-decoration: none;
   border: none;
-  padding: 0;
 }
 
 a:hover {

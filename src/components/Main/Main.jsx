@@ -15,11 +15,13 @@ function Main() {
   return (
     <>
       <MainHeader />
-      <Promo />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
+      <main className="landing">
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
       <Footer />
     </>
   );

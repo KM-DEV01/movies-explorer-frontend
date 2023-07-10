@@ -16,9 +16,9 @@ function MoviesCardList({ isRemovable = false }) {
             <MoviesCard />
             <MoviesCard />
             <MoviesCard isLiked />
-            {/* <MoviesCard /> */}
-            {/* <MoviesCard /> */}
-            {/* <MoviesCard /> */}
+            <MoviesCard />
+            <MoviesCard />
+            <MoviesCard />
             {/* <MoviesCard /> */}
           </>
         ) : (
