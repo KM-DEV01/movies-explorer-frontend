@@ -1,0 +1,29 @@
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+}
+
+.auth-header__logo {
+  height: 38px;
+  width: 38px;
+  transition: opacity .1s ease-out;
+}
+
+.auth-header__logo:hover {
+  opacity: 70%;
+}
+
+.auth-header__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@media screen and (max-width: 420px) {
+  .auth-header {
+    align-items: center;
+    gap: 48px;
+  }
+}

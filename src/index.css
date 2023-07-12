@@ -1,0 +1,49 @@
+@import url(./vendor/normalize.css);
+
+@import url(./vendor/inter_font/font.css);
+
+#root {
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+div, span,
+h1, h2, h3, p,
+a, ul, li, form, label,
+nav, section, button {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 400;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  border: 0;
+}
+
+a, button {
+  background: none;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  border: none;
+}
+
+a:hover {
+  opacity: 70%;
+}
+
+.page {
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  font-kerning: auto;
+  color: #fff;
+  margin: 0;
+  background-color: #202020;
+}
+

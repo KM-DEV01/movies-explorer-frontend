@@ -1,0 +1,40 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input__caption {
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+}
+
+.input__caption_error {
+  color: #EE3465;
+}
+
+.input__field {
+  border-radius: 8px;
+  background: #2F2F2F;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 10px 0;
+  color: #ffffff;
+  box-sizing: border-box;
+  height: 46px;
+  transition: background .1s ease-out;
+  border: solid 2px #2F2F2F;
+}
+
+.input__field:hover, .input__field:focus {
+  background: #202020;
+}
+
+.input__field_error {
+  color: #EE3465;
+}
+
+.input__field:focus {
+  outline: none;
+}
