@@ -1,11 +1,7 @@
 import React from 'react';
 import './FilterCheckbox.css';
 
-function FilterCheckbox({ isFilterDuration, setIsFilterDuration }) {
-  function onChecked(event) {
-    setIsFilterDuration(event.target.checked);
-  }
-
+function FilterCheckbox({ onChecked, filter }) {
   return (
     <div className="filter">
       <label className="filter__switch" htmlFor="filter-checkbox">
@@ -14,7 +10,7 @@ function FilterCheckbox({ isFilterDuration, setIsFilterDuration }) {
           type="checkbox"
           id="filter-checkbox"
           onChange={onChecked}
-          checked={isFilterDuration}
+          checked={filter}
         />
         <span className="filter__switch-slider" />
       </label>

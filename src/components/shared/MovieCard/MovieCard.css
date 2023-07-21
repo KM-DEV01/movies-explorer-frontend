@@ -1,4 +1,5 @@
 .movies-card {
+  position: relative;
   border-radius: 6px;
   background-color: #222222;
   display: flex;
@@ -97,32 +98,50 @@
   background: url("../../../images/icons/delete-icon-min.svg") no-repeat center;
   opacity: 0;
 }
+
+.movies-card__error-mask {
+  position: absolute;
+  background-color: #202020;
+  opacity: 60%;
+  height: 100%;
+  width: 100%;
+}
+
+.movies-card__error {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 100%;
+}
+
 /*МЕДИА ЗАПРОСЫ*/
 /*В 3 ряда*/
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1160px) {
   .movies-card__title {
     max-width: 230px;
   }
   .movies-card__image-container {
-    height: 170px;
+    height: 163px;
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 972px) {
   .movies-card__title {
-    max-width: 198px;
-  }
-  .movies-card__image-container {
-    height: 150px;
+    max-width: 200px;
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 851px) {
   .movies-card__title {
     max-width: 178px;
   }
   .movies-card__image-container {
-    height: 140px;
+    height: 123px;
   }
 }
 
@@ -146,7 +165,14 @@
   }
 
   .movies-card__text {
-    line-height: 13px;
+    line-height: 11px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .movies-card__image-container {
+    height: 158px;
   }
 }
 

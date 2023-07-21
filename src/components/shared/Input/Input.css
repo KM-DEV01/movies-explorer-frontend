@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+input:invalid ~ .input__caption_error {
+  display: block;
+}
+
 .input__caption {
   font-size: 10px;
   line-height: 12px;
@@ -11,6 +15,7 @@
 
 .input__caption_error {
   color: #EE3465;
+  display: none;
 }
 
 .input__field {
@@ -23,7 +28,7 @@
   color: #ffffff;
   box-sizing: border-box;
   height: 46px;
-  transition: background .1s ease-out;
+  transition: all .1s ease-out;
   border: solid 2px #2F2F2F;
 }
 
@@ -31,9 +36,10 @@
   background: #202020;
 }
 
-.input__field_error {
-  color: #EE3465;
-}
+/*.input__field_error {*/
+/*  color: #EE3465;*/
+/*  border-color: #EE3465;*/
+/*}*/
 
 .input__field:focus {
   outline: none;

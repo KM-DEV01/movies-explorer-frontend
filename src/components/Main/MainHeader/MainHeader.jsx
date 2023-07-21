@@ -10,9 +10,9 @@ function MainHeader() {
   return (
     <header className="main-header">
       <img className="main-header__logo" src={logo} alt="Логотип учебного проекта" />
-      <nav className="main-header__navs">
+      <nav className="unauthorized__navs">
         <Link to="/sign-up" className="main-header__link" type="button">Регистрация</Link>
-        <button className="main-header__button" type="button" onClick={onClick}>Войти</button>
+        <button className="unauthorized__button" type="button" onClick={onClick}>Войти</button>
       </nav>
     </header>
   );

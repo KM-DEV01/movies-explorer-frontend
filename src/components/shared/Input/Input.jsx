@@ -1,22 +1,23 @@
 import React from 'react';
 import './Input.css';
 
-function Input({
-  inputName = '',
-  errorText = '',
-  inputType = 'text',
-  placeholder = '',
-}) {
+function Input({ input, onChange }) {
+  const { label, errorMessage, ...inputProps } = input;
+
+  const [isFocus, setIsFocus] = React.useState(false);
+  function handleChange() {
+    setIsFocus(true);
+  }
   return (
     <div className="input">
-      <span className="input__caption">{inputName}</span>
+      <label className="input__caption" htmlFor={input.id}>{label}</label>
       <input
-        className={`input__field ${errorText && 'input__field_error'}`}
-        type={inputType}
-        placeholder={placeholder}
-        required
+        {...inputProps}
+        className="input__field"
+        onChange={onChange}
+        onFocus={handleChange}
       />
-      <span className="input__caption input__caption_error">{errorText}</span>
+      {isFocus && <span className="input__caption input__caption_error">{errorMessage}</span>}
     </div>
   );
 }

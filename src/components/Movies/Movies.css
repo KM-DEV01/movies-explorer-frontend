@@ -1,9 +1,6 @@
-.movies-page {
+.movies {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.movies {
-  flex: 1 0 auto;
+  position: relative;
 }
