@@ -6,4 +6,5 @@
 
 Ссылки на фронтенд:
 > https://toxicity.nomoredomains.rocks/
+
 > http://toxicity.nomoredomains.rocks/
