@@ -54,7 +54,7 @@ function SavedMovies({ loggedIn }) {
         setSavedMovies((prevState) => prevState.filter((movie) => movie._id !== movieId));
       })
       .catch((err) => {
-        setErrorMessage(err);
+        setErrorMessage(err.message || JSON.stringify(err));
       });
   };
 
@@ -65,7 +65,7 @@ function SavedMovies({ loggedIn }) {
         setSavedShorts(res.movies.filter((movie) => movie.duration <= 40));
       })
       .catch((err) => {
-        setErrorMessage(err);
+        setErrorMessage(err.message || JSON.stringify(err));
       })
       .finally(() => {
         setIsLoading(false);

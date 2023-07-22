@@ -10,6 +10,7 @@ import InfoPanel from '../shared/InfoPanel/InfoPanel';
 function Profile({ loggedIn, setCurrentUser }) {
   const navigate = useNavigate();
   const currentUser = React.useContext(UserContext);
+
   const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
@@ -27,7 +28,7 @@ function Profile({ loggedIn, setCurrentUser }) {
           setInfoMessage('Данные обновлены!');
         })
         .catch((err) => {
-          setErrorMessage(err.message);
+          setErrorMessage(err.message || JSON.stringify(err));
         });
     }
   };
@@ -41,7 +42,7 @@ function Profile({ loggedIn, setCurrentUser }) {
         navigate('/', { replace: true });
       })
       .catch((err) => {
-        setErrorMessage(JSON.stringify(err));
+        setErrorMessage(err.message || JSON.stringify(err));
       });
   };
 

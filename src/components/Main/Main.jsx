@@ -8,10 +8,9 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
-import InfoPanel from '../shared/InfoPanel/InfoPanel';
 import Header from '../widgets/Header/Header';
 
-function Main({ errorMessage, loggedIn }) {
+function Main({ loggedIn }) {
   return (
     <>
       <Header loggedIn={loggedIn} />
@@ -21,7 +20,6 @@ function Main({ errorMessage, loggedIn }) {
         <Techs />
         <AboutMe />
         <Portfolio />
-        <InfoPanel errorMessag={errorMessage} />
       </main>
       <Footer />
     </>

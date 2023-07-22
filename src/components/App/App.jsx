@@ -31,7 +31,6 @@ function App() {
         setIsTokenChecked(true);
       });
   }, []);
-
   return (
     !isTokenChecked ? (<Preloader />) : (
       <UserContext.Provider value={currentUser}>

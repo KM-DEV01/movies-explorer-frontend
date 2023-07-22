@@ -100,7 +100,7 @@ function Movies({ loggedIn }) {
             return updateMovies;
           });
         })
-        .catch((err) => setErrorMessage(JSON.stringify(err)));
+        .catch((err) => setErrorMessage(err.message || JSON.stringify(err)));
     }
     return mainApi.deleteMovie(movieObj.saved._id)
       .then(() => {
@@ -118,7 +118,7 @@ function Movies({ loggedIn }) {
           return updateMovies;
         });
       })
-      .catch((err) => setErrorMessage(JSON.stringify(err)));
+      .catch((err) => setErrorMessage(err.message || JSON.stringify(err)));
   };
 
   React.useEffect(() => {
