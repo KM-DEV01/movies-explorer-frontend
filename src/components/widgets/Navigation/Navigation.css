@@ -25,6 +25,7 @@
 }
 
 .unauthorized__button {
+  color: #000000;
   border: none;
   width: 76px;
   height: 32px;
