@@ -5,5 +5,5 @@
 [Ссылка на пул реквест](https://github.com/KM-ForProjects/movies-explorer-frontend/pull/2)
 
 Ссылки на фронтенд:
-https://toxicity.nomoredomains.rocks/
-http://toxicity.nomoredomains.rocks/
+> https://toxicity.nomoredomains.rocks/
+> http://toxicity.nomoredomains.rocks/
