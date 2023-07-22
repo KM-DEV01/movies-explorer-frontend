@@ -1,8 +1,8 @@
 import React, { Navigate, Outlet } from 'react-router-dom';
 
-function ProtectedRouteElement({ ...props }) {
+function ProtectedRouteElement({ loggedIn }) {
   return (
-    props.loggedIn ? <Outlet /> : <Navigate to="/" replace />
+    loggedIn ? <Outlet /> : <Navigate to="/" replace />
   );
 }
 

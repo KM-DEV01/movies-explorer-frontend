@@ -81,7 +81,7 @@ class MainApi {
   }
 }
 
-const mainApi = new MainApi('http://localhost:8000', {
+const mainApi = new MainApi('https://api.toxicity.nomoredomains.rocks', {
   headers: {
     'Content-Type': 'application/json',
   },
