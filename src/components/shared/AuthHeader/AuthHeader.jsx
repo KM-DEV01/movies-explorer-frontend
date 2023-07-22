@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AuthHeader.css';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/logo/logo.png';
 
 function AuthHeader({ greet = '' }) {
   const navigate = useNavigate();

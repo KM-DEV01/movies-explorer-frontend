@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/logo/logo.png';
 import Navigation from '../Navigation/Navigation';
 
 function Header({ loggedIn }) {
