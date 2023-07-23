@@ -9,36 +9,41 @@ import MoviesContent from '../shared/MoviesContent/MoviesContent';
 import mainApi from '../../utils/MainApi';
 
 function SavedMovies({ loggedIn }) {
+  const [savedMovies, setSavedMovies] = React.useState([]);
+  const [initSavedMovies, setInitSavedMovies] = React.useState([]);
+
   const [isValid, setIsValid] = React.useState(false);
   const [keyWord, setKeyWord] = React.useState('');
-  const [errorMessage, setErrorMessage] = React.useState('');
-  const [savedMovies, setSavedMovies] = React.useState([]);
-  const [savedShorts, setSavedShorts] = React.useState([]);
   const [filterShorts, setFilterShorts] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [errorMessage, setErrorMessage] = React.useState('');
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  // Для удаления из локальных данных
+  const [movies, setMovies] = React.useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsSubmitted(true);
     if (isValid) {
-      return setSavedMovies(
-        (prevState) => prevState
-          .filter((movie) => movie.nameRU
-            .trim()
-            .toLowerCase()
-            .includes(keyWord.trim().toLowerCase())),
-      );
+      setSavedMovies(initSavedMovies
+        .filter((movie) => movie.nameRU
+          .trim()
+          .toLowerCase()
+          .includes(keyWord.trim().toLowerCase())));
     }
-    return setErrorMessage('Нужно ввести ключевое слово');
   };
 
   const handleChange = (event) => {
+    setIsSubmitted(false);
     setKeyWord(event.target.value);
-    if (event.target.value) {
+    if (!event.target.value) {
+      setIsValid(false);
+      setSavedMovies(initSavedMovies);
+    } else {
       setErrorMessage('');
       setIsValid(true);
-      return;
     }
-    setIsValid(false);
   };
 
   const handleChecked = () => {
@@ -50,8 +55,18 @@ function SavedMovies({ loggedIn }) {
     event.stopPropagation();
     return mainApi.deleteMovie(movieId)
       .then(() => {
-        setSavedShorts((prevState) => prevState.filter((movie) => movie._id !== movieId));
         setSavedMovies((prevState) => prevState.filter((movie) => movie._id !== movieId));
+        setInitSavedMovies((prevState) => prevState.filter((movie) => movie._id !== movieId));
+        // Для удаления из локальных данных
+        setMovies((prevMovies) => prevMovies.map((prevMovie) => {
+          if (prevMovie.saved && prevMovie.saved._id === movieId) {
+            return {
+              ...prevMovie,
+              saved: undefined,
+            };
+          }
+          return prevMovie;
+        }));
       })
       .catch((err) => {
         setErrorMessage(err.message || JSON.stringify(err));
@@ -61,8 +76,8 @@ function SavedMovies({ loggedIn }) {
   React.useEffect(() => {
     mainApi.getSavedMovies()
       .then((res) => {
+        setInitSavedMovies(res.movies);
         setSavedMovies(res.movies);
-        setSavedShorts(res.movies.filter((movie) => movie.duration <= 40));
       })
       .catch((err) => {
         setErrorMessage(err.message || JSON.stringify(err));
@@ -70,7 +85,17 @@ function SavedMovies({ loggedIn }) {
       .finally(() => {
         setIsLoading(false);
       });
+    // Для удаления из локальных данных
+    const localMovies = JSON.parse(localStorage.getItem('localMovies')) || [];
+    if (localMovies.length) {
+      setMovies(localMovies);
+    }
   }, []);
+
+  // Для удаления из локальных данных
+  React.useEffect(() => {
+    localStorage.setItem('localMovies', JSON.stringify(movies));
+  }, [movies]);
 
   React.useEffect(() => {
     if (errorMessage) {
@@ -89,10 +114,12 @@ function SavedMovies({ loggedIn }) {
         onChecked={handleChecked}
         onClick={handleDelete}
         errorMessage={errorMessage}
-        movies={filterShorts ? savedShorts : savedMovies}
+        movies={filterShorts ? savedMovies.filter((movie) => movie.duration <= 40) : savedMovies}
         filter={filterShorts}
         keyWord={keyWord}
         isLoading={isLoading}
+        isValid={isValid}
+        isSubmitted={isSubmitted}
       />
       <Footer />
     </div>

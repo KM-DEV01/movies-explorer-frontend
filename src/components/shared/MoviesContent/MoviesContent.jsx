@@ -17,6 +17,8 @@ function MoviesContent({
   filter,
   movies,
   isLoading,
+  isValid,
+  isSubmitted,
 }) {
   return (
     <main className="movies-content">
@@ -26,9 +28,20 @@ function MoviesContent({
         onChecked={onChecked}
         keyWord={keyWord}
         filter={filter}
+        isValid={isValid}
+        isSubmitted={isSubmitted}
       />
-      {isLoading ? <Preloader /> : <MoviesCardList movies={movies} onClick={onClick} />}
-      {!isLoading && <Message isError={errorMessage.length} isMovies={movies.length} />}
+      {isLoading ? <Preloader /> : (
+        <>
+          <MoviesCardList movies={movies} onClick={onClick} />
+          <Message
+            isMovies={movies.length}
+            isError={errorMessage}
+            isValid={isValid}
+            isSubmitted={isSubmitted}
+          />
+        </>
+      )}
       <InfoPanel errorMessage={errorMessage} />
     </main>
   );

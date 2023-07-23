@@ -10,49 +10,57 @@ import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 
 function Movies({ loggedIn }) {
+  const [movies, setMovies] = React.useState([]);
+  const [initMovies, setInitMovies] = React.useState([]);
+
   const [isValid, setIsValid] = React.useState(false);
   const [keyWord, setKeyWord] = React.useState('');
-  const [movies, setMovies] = React.useState([]);
-  const [shorts, setShorts] = React.useState([]);
   const [filterShorts, setFilterShorts] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState('');
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsSubmitted(true);
     if (isValid) {
-      setIsLoading(true);
-      return Promise.all([mainApi.getSavedMovies(), moviesApi.getMovies()])
-        .then(([savedMoviesData, moviesData]) => {
-          const initMovies = (moviesData.map((movie) => {
-            const saved = savedMoviesData.movies.find((save) => save.movieId === movie.id);
-            return { ...movie, saved };
-          }));
-          setMovies(
-            initMovies.filter((movie) => movie.nameRU
-              .trim()
-              .toLowerCase()
-              .includes(keyWord.trim().toLowerCase())),
-          );
-          setShorts(
-            initMovies.filter((movie) => (movie.nameRU
-              .trim()
-              .toLowerCase()
-              .includes(keyWord.trim().toLowerCase()))
-              && movie.duration <= 40),
-          );
-        })
-        .catch((err) => {
-          setErrorMessage(err);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+      if (initMovies.length) {
+        console.log('init movies founded');
+        setMovies(
+          initMovies.filter((movie) => movie.nameRU
+            .trim()
+            .toLowerCase()
+            .includes(keyWord.trim().toLowerCase())),
+        );
+      } else {
+        console.log('init movies not founded');
+        setIsLoading(true);
+        Promise.all([mainApi.getSavedMovies(), moviesApi.getMovies()])
+          .then(([savedMoviesData, moviesData]) => {
+            const receivedMovies = (moviesData.map((movie) => {
+              const saved = savedMoviesData.movies.find((save) => save.movieId === movie.id);
+              return { ...movie, saved };
+            }));
+            setInitMovies(receivedMovies);
+            setMovies(
+              receivedMovies.filter((movie) => movie.nameRU
+                .trim()
+                .toLowerCase()
+                .includes(keyWord.trim().toLowerCase())),
+            );
+          })
+          .catch((err) => {
+            setErrorMessage(err.message || JSON.stringify(err));
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
     }
-    return setErrorMessage('Нужно ввести ключевое слово');
   };
 
   const handleChange = (event) => {
+    setIsSubmitted(false);
     setKeyWord(event.target.value);
     if (event.target.value) {
       setErrorMessage('');
@@ -86,37 +94,29 @@ function Movies({ loggedIn }) {
       };
       return mainApi.createMovie(movieData)
         .then((savedMovie) => {
-          setMovies((prevMovies) => {
-            const updateMovies = prevMovies.map((prevMovie) => {
-              if (prevMovie.id === savedMovie.data.movieId) {
-                return {
-                  ...prevMovie,
-                  saved: savedMovie.data,
-                };
-              }
-              return prevMovie;
-            });
-            setShorts(updateMovies.filter((movie) => movie.duration <= 40));
-            return updateMovies;
-          });
+          setMovies((prevMovies) => prevMovies.map((prevMovie) => {
+            if (prevMovie.id === savedMovie.data.movieId) {
+              return {
+                ...prevMovie,
+                saved: savedMovie.data,
+              };
+            }
+            return prevMovie;
+          }));
         })
         .catch((err) => setErrorMessage(err.message || JSON.stringify(err)));
     }
     return mainApi.deleteMovie(movieObj.saved._id)
       .then(() => {
-        setMovies((prevMovies) => {
-          const updateMovies = prevMovies.map((prevMovie) => {
-            if (prevMovie.id === movieObj.id) {
-              return {
-                ...prevMovie,
-                saved: undefined,
-              };
-            }
-            return prevMovie;
-          });
-          setShorts(updateMovies.filter((movie) => movie.duration <= 40));
-          return updateMovies;
-        });
+        setMovies((prevMovies) => prevMovies.map((prevMovie) => {
+          if (prevMovie.id === movieObj.id) {
+            return {
+              ...prevMovie,
+              saved: undefined,
+            };
+          }
+          return prevMovie;
+        }));
       })
       .catch((err) => setErrorMessage(err.message || JSON.stringify(err)));
   };
@@ -125,7 +125,8 @@ function Movies({ loggedIn }) {
     const localKeyWord = localStorage.getItem('localKeyWord');
     const localFilterShorts = JSON.parse(localStorage.getItem('localFilterShorts'));
     const localMovies = JSON.parse(localStorage.getItem('localMovies')) || [];
-    const localShorts = JSON.parse(localStorage.getItem('localShorts')) || [];
+    const localInitMovies = JSON.parse(localStorage.getItem('localInitMovies')) || [];
+
     if (localKeyWord) {
       setKeyWord(localKeyWord);
       setIsValid(true);
@@ -136,8 +137,8 @@ function Movies({ loggedIn }) {
     if (localMovies.length) {
       setMovies(localMovies);
     }
-    if (localShorts.length) {
-      setShorts(localShorts);
+    if (localInitMovies.length) {
+      setInitMovies(localInitMovies);
     }
   }, []);
 
@@ -145,8 +146,18 @@ function Movies({ loggedIn }) {
     localStorage.setItem('localKeyWord', keyWord);
     localStorage.setItem('localFilterShorts', filterShorts.toString());
     localStorage.setItem('localMovies', JSON.stringify(movies));
-    localStorage.setItem('localShorts', JSON.stringify(shorts));
-  }, [keyWord, filterShorts, movies, shorts]);
+    localStorage.setItem('localInitMovies', JSON.stringify(initMovies));
+  }, [keyWord, filterShorts, movies, initMovies]);
+
+  // React.useEffect(() => {
+  //   if (movies.length && initMovies.length) {
+  //     // eslint-disable-next-line array-callback-return
+  //     setInitMovies((prevState) => prevState.map((initMovie) => {
+  //       if (initMovie.id === movies.id[initMovie.id]) {
+  //         return
+  //       }
+  //   }
+  // }, [movies]);
 
   React.useEffect(() => {
     if (errorMessage) {
@@ -156,6 +167,7 @@ function Movies({ loggedIn }) {
     }
   }, [errorMessage]);
 
+  console.log(initMovies);
   return (
     <div className="movies">
       <Header loggedIn={loggedIn} />
@@ -165,10 +177,12 @@ function Movies({ loggedIn }) {
         onChecked={handleChecked}
         onClick={handleSave}
         errorMessage={errorMessage}
-        movies={filterShorts ? shorts : movies}
+        movies={filterShorts ? movies.filter((movie) => movie.duration <= 40) : movies}
         filter={filterShorts}
         keyWord={keyWord}
         isLoading={isLoading}
+        isValid={isValid}
+        isSubmitted={isSubmitted}
       />
       <Footer />
     </div>

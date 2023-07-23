@@ -153,7 +153,7 @@
 
   .movies-card__title {
     line-height: 16px;
-    max-width: 260px;
+    max-width: 200px;
   }
 
   .movies-card__container {
@@ -167,6 +167,10 @@
   .movies-card__text {
     line-height: 11px;
     font-size: 11px;
+  }
+
+  .movies-card__delete-button {
+    opacity: 80;
   }
 }
 

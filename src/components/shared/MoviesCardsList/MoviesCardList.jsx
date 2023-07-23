@@ -64,7 +64,7 @@ function MoviesCardList({ movies, onClick }) {
   }, [windowWidth]);
 
   return (
-    <section className="movies-cards">
+    <section className="movies-cards" hidden={!movies.length}>
       <ul className="movies-cards__list">
         { movies.slice(0, savedPage ? movies.length : visibleCards)
           .map((movie) => (

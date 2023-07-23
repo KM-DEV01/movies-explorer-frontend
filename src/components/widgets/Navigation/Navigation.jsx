@@ -7,6 +7,7 @@ function Navigation({ isMainPage, loggedIn }) {
   const location = useLocation();
   const [isShown, setIsShown] = React.useState(false);
   const isSavedPage = location.pathname === '/saved-movies';
+  const isMoviePage = location.pathname === '/movies';
 
   return (
     !loggedIn ? (
@@ -21,9 +22,9 @@ function Navigation({ isMainPage, loggedIn }) {
         <nav className={`navigation ${isShown && 'navigation__shown'}`}>
           <button className="navigation__close-button" aria-label="Закрыть" type="button" onClick={() => setIsShown(!isShown)} />
           <div className="navigation__links">
-            <Link to="/" className="navigation__link navigation__link_mobile">Главная</Link>
-            <Link to="/movies" className={`navigation__link ${(!isSavedPage && !isMainPage) && 'navigation__link_active'}`}>Фильмы</Link>
-            <Link to="/saved-movies" className={`navigation__link ${(isSavedPage && !isMainPage) && 'navigation__link_active'}`}>Сохраненные фильмы</Link>
+            <Link to="/" className={`navigation__link navigation__link_mobile ${isMainPage && 'navigation__link_active'}`}>Главная</Link>
+            <Link to="/movies" className={`navigation__link ${isMoviePage && 'navigation__link_active'}`}>Фильмы</Link>
+            <Link to="/saved-movies" className={`navigation__link ${isSavedPage && 'navigation__link_active'}`}>Сохраненные фильмы</Link>
           </div>
           <button className="navigation__profile-button" type="button" onClick={() => navigate('/profile')}>
             Аккаунт

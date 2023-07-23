@@ -41,8 +41,10 @@ function App() {
             <Route path="/saved-movies" element={<SavedMovies loggedIn={isLoggedIn} />} />
             <Route path="/profile" element={<Profile loggedIn={setIsLoggedIn} setCurrentUser={setCurrentUser} />} />
           </Route>
-          <Route path="/sign-up" element={<Register currentUser={setCurrentUser} isLoggedIn={setIsLoggedIn} />} />
-          <Route path="/sign-in" element={<Login currentUser={setCurrentUser} isLoggedIn={setIsLoggedIn} />} />
+          <Route element={<ProtectedRouteElement loggedIn={!isLoggedIn} />}>
+            <Route path="/sign-up" element={<Register currentUser={setCurrentUser} isLoggedIn={setIsLoggedIn} />} />
+            <Route path="/sign-in" element={<Login currentUser={setCurrentUser} isLoggedIn={setIsLoggedIn} />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </UserContext.Provider>
