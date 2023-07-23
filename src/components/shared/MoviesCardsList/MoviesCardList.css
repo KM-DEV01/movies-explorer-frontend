@@ -33,14 +33,14 @@
 /*МЕДИА ЗАПРОСЫ*/
 /*В 3 ряда*/
 
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1180px) {
   .movies-cards__list {
     grid-template-columns: repeat(auto-fit, 304px);
     gap: 20px
   }
 }
 
-@media screen and (max-width: 972px) {
+@media screen and (max-width: 992px) {
   .movies-cards__list {
     grid-template-columns: repeat(auto-fit, 264px);
   }
@@ -52,10 +52,16 @@
   }
 }
 
-@media screen and (max-width: 851px) {
+@media screen and (max-width: 871px) {
   .movies-cards__list {
     grid-template-columns: repeat(auto-fit, 238px);
     gap: 15px
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .movies-cards__list {
+    grid-template-columns: repeat(auto-fit, 218px);
   }
 }
 
@@ -75,7 +81,7 @@
   }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 745px) {
   .movies-cards__list {
     grid-template-columns: repeat(auto-fit, 268px);
     gap: 20px
@@ -96,9 +102,15 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
   .movies-cards__list {
     grid-template-columns: repeat(auto-fit, 220px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movies-cards__list {
+    grid-template-columns: repeat(auto-fit, 200px);
   }
 }
 

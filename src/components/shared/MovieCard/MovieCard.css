@@ -121,7 +121,7 @@
 
 /*МЕДИА ЗАПРОСЫ*/
 /*В 3 ряда*/
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1180px) {
   .movies-card__title {
     max-width: 230px;
   }
@@ -130,18 +130,24 @@
   }
 }
 
-@media screen and (max-width: 972px) {
+@media screen and (max-width: 992px) {
   .movies-card__title {
     max-width: 200px;
   }
 }
 
-@media screen and (max-width: 851px) {
+@media screen and (max-width: 871px) {
   .movies-card__title {
     max-width: 178px;
   }
   .movies-card__image-container {
     height: 123px;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .movies-card__image-container {
+    height: 119px;
   }
 }
 
@@ -168,13 +174,9 @@
     line-height: 11px;
     font-size: 11px;
   }
-
-  .movies-card__delete-button {
-    opacity: 80;
-  }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 745px) {
   .movies-card__image-container {
     height: 158px;
   }
@@ -196,7 +198,15 @@
   }
 
   .movies-card__title {
+    font-size: 12px;
+    line-height: 15px;
     max-width: 160px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movies-card__title {
+    max-width: 130px;
   }
 }
 
@@ -207,8 +217,6 @@
   }
 
   .movies-card__title {
-    font-size: 12px;
-    line-height: 15px;
     max-width: 240px;
   }
 
@@ -227,5 +235,9 @@
 
   .movies-card__button {
     margin-top: 7px;
+  }
+
+  .movies-card__delete-button {
+    opacity: 80;
   }
 }

@@ -25,7 +25,6 @@ function Movies({ loggedIn }) {
     setIsSubmitted(true);
     if (isValid) {
       if (initMovies.length) {
-        console.log('init movies founded');
         setMovies(
           initMovies.filter((movie) => movie.nameRU
             .trim()
@@ -33,7 +32,6 @@ function Movies({ loggedIn }) {
             .includes(keyWord.trim().toLowerCase())),
         );
       } else {
-        console.log('init movies not founded');
         setIsLoading(true);
         Promise.all([mainApi.getSavedMovies(), moviesApi.getMovies()])
           .then(([savedMoviesData, moviesData]) => {
@@ -103,12 +101,30 @@ function Movies({ loggedIn }) {
             }
             return prevMovie;
           }));
+          setInitMovies((prevMovies) => prevMovies.map((prevMovie) => {
+            if (prevMovie.id === savedMovie.data.movieId) {
+              return {
+                ...prevMovie,
+                saved: savedMovie.data,
+              };
+            }
+            return prevMovie;
+          }));
         })
         .catch((err) => setErrorMessage(err.message || JSON.stringify(err)));
     }
     return mainApi.deleteMovie(movieObj.saved._id)
       .then(() => {
         setMovies((prevMovies) => prevMovies.map((prevMovie) => {
+          if (prevMovie.id === movieObj.id) {
+            return {
+              ...prevMovie,
+              saved: undefined,
+            };
+          }
+          return prevMovie;
+        }));
+        setInitMovies((prevMovies) => prevMovies.map((prevMovie) => {
           if (prevMovie.id === movieObj.id) {
             return {
               ...prevMovie,
@@ -149,16 +165,6 @@ function Movies({ loggedIn }) {
     localStorage.setItem('localInitMovies', JSON.stringify(initMovies));
   }, [keyWord, filterShorts, movies, initMovies]);
 
-  // React.useEffect(() => {
-  //   if (movies.length && initMovies.length) {
-  //     // eslint-disable-next-line array-callback-return
-  //     setInitMovies((prevState) => prevState.map((initMovie) => {
-  //       if (initMovie.id === movies.id[initMovie.id]) {
-  //         return
-  //       }
-  //   }
-  // }, [movies]);
-
   React.useEffect(() => {
     if (errorMessage) {
       setTimeout(() => {
@@ -167,7 +173,6 @@ function Movies({ loggedIn }) {
     }
   }, [errorMessage]);
 
-  console.log(initMovies);
   return (
     <div className="movies">
       <Header loggedIn={loggedIn} />

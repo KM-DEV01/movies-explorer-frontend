@@ -47,15 +47,12 @@ function MoviesCardList({ movies, onClick }) {
 
   React.useEffect(() => {
     setSavedPage(location.pathname === '/saved-movies');
-    if (!savedPage) {
-      changeAdder();
-      changeVisibility();
-    }
   }, []);
 
   React.useEffect(() => {
-    if (savedPage) {
+    if (!savedPage) {
       changeAdder();
+      changeVisibility();
       window.addEventListener('resize', handleWindowResize);
     }
     return () => {

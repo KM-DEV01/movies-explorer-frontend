@@ -19,8 +19,8 @@ function SavedMovies({ loggedIn }) {
   const [errorMessage, setErrorMessage] = React.useState('');
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
-  // Для удаления из локальных данных
   const [movies, setMovies] = React.useState([]);
+  const [initMovies, setInitMovies] = React.useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -67,6 +67,15 @@ function SavedMovies({ loggedIn }) {
           }
           return prevMovie;
         }));
+        setInitMovies((prevMovies) => prevMovies.map((prevMovie) => {
+          if (prevMovie.saved && prevMovie.saved._id === movieId) {
+            return {
+              ...prevMovie,
+              saved: undefined,
+            };
+          }
+          return prevMovie;
+        }));
       })
       .catch((err) => {
         setErrorMessage(err.message || JSON.stringify(err));
@@ -85,17 +94,21 @@ function SavedMovies({ loggedIn }) {
       .finally(() => {
         setIsLoading(false);
       });
-    // Для удаления из локальных данных
+
     const localMovies = JSON.parse(localStorage.getItem('localMovies')) || [];
+    const localInitMovies = JSON.parse(localStorage.getItem('localInitMovies')) || [];
     if (localMovies.length) {
       setMovies(localMovies);
     }
+    if (localInitMovies.length) {
+      setInitMovies(localInitMovies);
+    }
   }, []);
 
-  // Для удаления из локальных данных
   React.useEffect(() => {
     localStorage.setItem('localMovies', JSON.stringify(movies));
-  }, [movies]);
+    localStorage.setItem('localInitMovies', JSON.stringify(initMovies));
+  }, [movies, initMovies]);
 
   React.useEffect(() => {
     if (errorMessage) {
