@@ -57,10 +57,6 @@
 }
 
 @media screen and (max-width: 520px){
-  .filter {
-    margin-top: 42px;
-  }
-
   .filter__property {
     font-size: 11px;
   }

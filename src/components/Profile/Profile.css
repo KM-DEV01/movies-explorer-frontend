@@ -72,7 +72,7 @@
 .profile__stroke {
   border: solid 1px #424242;
   width: 100%;
-  margin: 17px 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 
 .profile__buttons {
@@ -80,7 +80,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding-top: 220px;
+  padding-top: 200px;
 }
 
 .profile__button {
@@ -108,22 +108,22 @@
     padding: 231px 0 30px 0;
   }
   .profile__greet {
-    padding-bottom: 96px;
+    padding-bottom: 93px;
   }
   .profile__buttons {
-    padding-top: 210px;
+    padding-top: 190px;
   }
 }
 
 @media screen and (max-width: 500px){
   .profile {
-    padding: 68px 30px 40px 30px;
+    padding: 72px 30px 40px 30px;
   }
   .profile__greet {
-    padding-bottom: 80px;
+    padding-bottom: 77px;
   }
   .profile__buttons {
-    padding-top: 379px;
+    padding-top: 359px;
   }
 
   .profile__button {

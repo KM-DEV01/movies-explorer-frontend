@@ -3,6 +3,8 @@ import './MoviesCardList.css';
 import { useLocation } from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
 
+import { visibleCardsConf, adderConf } from '../../../consts/visibilityOptions';
+
 function MoviesCardList({ movies, onClick }) {
   const [savedPage, setSavedPage] = React.useState(false);
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -24,25 +26,27 @@ function MoviesCardList({ movies, onClick }) {
   };
 
   const changeVisibility = () => {
+    const { desktop, tablet, mobile } = visibleCardsConf;
     if (windowWidth > 768) {
-      setVisibleCards(12);
+      setVisibleCards(desktop);
       return;
     }
     if (windowWidth > 480) {
-      setVisibleCards(8);
+      setVisibleCards(tablet);
       return;
     }
     if (windowWidth <= 480) {
-      setVisibleCards(5);
+      setVisibleCards(mobile);
     }
   };
 
   const changeAdder = () => {
+    const { desktop, tablet } = adderConf;
     if (windowWidth > 768) {
-      setAdder(3);
+      setAdder(desktop);
       return;
     }
-    setAdder(2);
+    setAdder(tablet);
   };
 
   React.useEffect(() => {

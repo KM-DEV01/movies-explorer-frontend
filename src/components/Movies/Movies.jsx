@@ -9,6 +9,8 @@ import MoviesContent from '../shared/MoviesContent/MoviesContent';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 
+import { durationConf } from '../../consts/visibilityOptions';
+
 function Movies({ loggedIn }) {
   const [movies, setMovies] = React.useState([]);
   const [initMovies, setInitMovies] = React.useState([]);
@@ -182,7 +184,7 @@ function Movies({ loggedIn }) {
         onChecked={handleChecked}
         onClick={handleSave}
         errorMessage={errorMessage}
-        movies={filterShorts ? movies.filter((movie) => movie.duration <= 40) : movies}
+        movies={filterShorts ? movies.filter((movie) => movie.duration <= durationConf) : movies}
         filter={filterShorts}
         keyWord={keyWord}
         isLoading={isLoading}
