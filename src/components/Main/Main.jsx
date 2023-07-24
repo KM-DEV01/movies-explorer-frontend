@@ -3,18 +3,17 @@ import './Main.css';
 
 import Footer from '../widgets/Footer/Footer';
 
-import MainHeader from './MainHeader/MainHeader';
-
 import Promo from './Promo/Promo';
 import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
+import Header from '../widgets/Header/Header';
 
-function Main() {
+function Main({ loggedIn }) {
   return (
     <>
-      <MainHeader />
+      <Header loggedIn={loggedIn} />
       <main className="landing">
         <Promo />
         <AboutProject />

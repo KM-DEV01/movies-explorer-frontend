@@ -1,0 +1,42 @@
+.info-panel {
+  display: flex;
+  align-items: center;
+  width: 270px;
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  min-height: 60px;
+  background-color: #2F2F2F;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.info-panel__hidden {
+  display: none;
+}
+
+.info-panel__icon {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid #3DDC84;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  color: #3DDC84;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.info-panel__icon-error {
+  border: 2px solid #EE3465;
+  color: #EE3465;
+}
+
+.info-panel__text {
+  margin-right: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}

@@ -1,31 +1,48 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 import AuthHeader from '../shared/AuthHeader/AuthHeader';
-import Input from '../shared/Input/Input';
-import AuthControls from '../shared/AuthControls/AuthControls';
+import mainApi from '../../utils/MainApi';
+import AuthForm from '../shared/AuthForm/AuthForm';
+import InfoPanel from '../shared/InfoPanel/InfoPanel';
 
-function Register() {
+function Register({ currentUser, isLoggedIn }) {
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = React.useState('');
+
+  const handleSubmit = (event, isValid, values) => {
+    event.preventDefault();
+    if (isValid) {
+      mainApi.signup(values)
+        .then((res) => {
+          currentUser(res.data);
+          isLoggedIn(true);
+          navigate('/movies', { replace: true });
+        })
+        .catch((err) => {
+          setErrorMessage(err.message || JSON.stringify(err));
+        });
+    }
+  };
+
+  React.useEffect(() => {
+    if (errorMessage) {
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5 * 1000);
+    }
+  }, [errorMessage]);
+
   return (
     <div className="register-page">
       <AuthHeader greet="Добро пожаловать!" />
       <main className="auth">
         <section className="register">
-          <form className="register__form">
-            <div className="register__inputs">
-              <Input inputName="Имя" placeholder="Иванов Иван" />
-              <Input inputName="E-mail" inputType="email" placeholder="example@gmail.com" />
-              <Input inputName="Пароль" inputType="password" errorText="Что-то пошло не так" />
-            </div>
-            <AuthControls
-              btnText="Зарегистрироваться"
-              captionText="Уже зарегистрированы?"
-              linkTo="/sign-in"
-              linkText="Войти"
-            />
-          </form>
+          <AuthForm handleSubmit={handleSubmit} />
         </section>
       </main>
+      <InfoPanel errorMessage={errorMessage} />
     </div>
   );
 }

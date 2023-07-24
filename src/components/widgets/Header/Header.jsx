@@ -1,18 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/logo/logo.png';
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header({ loggedIn }) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isMainPage = location.pathname === '/';
 
   return (
-    <header className="header">
-      <button type="button" onClick={() => navigate('/')}>
+    <header className={`header ${isMainPage && 'header-main'}`}>
+      <button className="header__button" type="button" onClick={() => navigate('/')}>
         <img className="header__logo" src={logo} alt="Логотип учебного проекта" />
       </button>
-      <Navigation />
+      <Navigation isMainPage={isMainPage} loggedIn={loggedIn} />
     </header>
   );
 }

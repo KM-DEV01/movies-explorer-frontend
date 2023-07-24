@@ -1,5 +1,6 @@
 .footer {
   padding: 79px 70px 20px 70px;
+  margin-top: auto;
 }
 
 .footer__title {
@@ -31,7 +32,7 @@
   color: #ffffff;
 }
 
-@media screen and (max-width: 928px) {
+@media screen and (max-width: 910px) {
   .footer {
     padding: 79px 30px 20px 30px;
   }

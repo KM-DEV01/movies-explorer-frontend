@@ -1,30 +1,48 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 import AuthHeader from '../shared/AuthHeader/AuthHeader';
-import Input from '../shared/Input/Input';
-import AuthControls from '../shared/AuthControls/AuthControls';
+import mainApi from '../../utils/MainApi';
+import AuthForm from '../shared/AuthForm/AuthForm';
+import InfoPanel from '../shared/InfoPanel/InfoPanel';
 
-function Login() {
+function Login({ currentUser, isLoggedIn }) {
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = React.useState('');
+
+  const handleSubmit = (event, isValid, values) => {
+    event.preventDefault();
+    if (isValid) {
+      mainApi.signin(values)
+        .then((res) => {
+          currentUser(res.data);
+          isLoggedIn(true);
+          navigate('/movies', { replace: true });
+        })
+        .catch((err) => {
+          setErrorMessage(err.message || JSON.stringify(err));
+        });
+    }
+  };
+
+  React.useEffect(() => {
+    if (errorMessage) {
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5 * 1000);
+    }
+  }, [errorMessage]);
+
   return (
     <div className="login-page">
       <AuthHeader greet="Рады видеть!" />
       <main className="auth">
         <section className="login">
-          <form className="login__form">
-            <div className="login__inputs">
-              <Input inputName="E-mail" inputType="email" placeholder="example@gmail.com" />
-              <Input inputName="Пароль" inputType="password" />
-            </div>
-            <AuthControls
-              btnText="Войти"
-              captionText="Ещё не зарегистрированы?"
-              linkTo="/sign-up"
-              linkText="Регистрация"
-            />
-          </form>
+          <AuthForm handleSubmit={handleSubmit} />
         </section>
       </main>
+      <InfoPanel errorMessage={errorMessage} />
     </div>
   );
 }

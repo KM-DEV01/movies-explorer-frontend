@@ -1,0 +1,140 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.auth-form_login {
+  gap: 158px;
+}
+
+.auth-form__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form__label {
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form__input {
+  border-radius: 8px;
+  background: #2F2F2F;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 10px 0;
+  color: #ffffff;
+  box-sizing: border-box;
+  height: 46px;
+  transition: all .1s ease-out;
+  border: solid 2px #2F2F2F;
+}
+
+.auth-form__input-error {
+  color: #EE3465;
+  border-color: #EE3465;
+}
+
+.auth-form__input:hover, .auth-form__input:focus {
+  background: #202020;
+}
+
+.auth-form__input:focus {
+  outline: none;
+}
+
+.auth-form__error {
+  font-size: 11px;
+  color: #EE3465;
+  display: block;
+  text-align: start;
+  line-height: 11px;
+  margin-bottom: 10px;
+}
+
+.auth-form__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.auth-form__button {
+  border: none;
+  background-color: #4285F4;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  padding: 13px 0 15px 0;
+}
+
+.auth-form__button:disabled, .auth-form__button:disabled:hover  {
+  background-color: #424242;
+  color: #8B8B8B;
+  cursor: default;
+}
+
+.auth-form__button:hover {
+  background-color: #1569f4;
+}
+
+.auth-form__error {
+  text-align: center;
+  color: #EE3465;
+  font-size: 11px;
+}
+
+.auth-form__links {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.auth-form__caption {
+  color: #8B8B8B;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.auth-form__link {
+  font-size: 14px;
+  line-height: 17px;
+  color: #4285F4;
+}
+
+@media screen and (max-width: 480px) {
+  .auth-form {
+    gap: 159px;
+  }
+
+  .auth-form_login {
+    gap: 247px;
+  }
+
+  .auth-form__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .auth-form__buttons {
+    gap: 15px;
+  }
+
+  .auth-form__caption {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .auth-form__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
