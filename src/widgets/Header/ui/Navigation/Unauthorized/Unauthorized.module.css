@@ -1,0 +1,47 @@
+.unauthorized__navs {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 32px;
+}
+
+.unauthorized__link {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 16px;
+  transition: opacity .2s ease-out;
+}
+
+.unauthorized__button {
+  color: #000000;
+  border: none;
+  width: 76px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 3px;
+  padding: 0 10px;
+  background-color: #3DDC84;
+  transition: opacity .2s ease-out;
+}
+
+.unauthorized__button:hover, .unauthorized__link:hover {
+  opacity: 50%;
+}
+
+@media screen and (max-width: 520px) {
+  .unauthorized__navs {
+    gap: 14px;
+  }
+
+  .unauthorized__link {
+    font-size: 10px;
+  }
+
+  .unauthorized__button {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+  }
+}

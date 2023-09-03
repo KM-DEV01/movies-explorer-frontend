@@ -1,0 +1,18 @@
+.logout_button {
+  display: flex;
+  margin: 16px auto;
+  color: #EE3465;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.logout_button:hover {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 500px) {
+  .logout_button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

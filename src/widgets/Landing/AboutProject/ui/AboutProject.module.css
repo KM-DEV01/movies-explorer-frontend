@@ -1,0 +1,149 @@
+.aboutProject {
+  padding: 110px 70px 111px 70px;
+}
+
+.aboutProject__title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -1px;
+  line-height: 27px;
+}
+
+.aboutProject__stroke {
+  border: solid 1px #DADADA;
+  margin: 23px 0 70px 0;
+}
+
+.aboutProject__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px
+}
+
+.aboutProject__list {
+  margin: 0;
+  padding: 0;
+  max-width: 550px;
+  letter-spacing: -.8px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.aboutProject__listElement {
+  margin-top: 26px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+  letter-spacing: 0;
+}
+
+.aboutProject__progress {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 110px;
+  font-size: 14px;
+}
+
+.aboutProject__line {
+  height: 36px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutProject__line_short {
+  background-color: #3DDC84;
+  color: #000000;
+}
+
+.aboutProject__line_large {
+  background-color: #303030;
+}
+
+.aboutProject__caption {
+  color: #8B8B8B;
+  line-height: 17px;
+  margin: 14px 0 0 0;
+}
+
+@media screen and (max-width: 928px) {
+  .aboutProject {
+    padding: 90px 50px 90px 50px;
+  }
+
+  .aboutProject__info {
+    gap: 30px;
+  }
+
+  .aboutProject__list {
+    max-width: 319px;
+  }
+
+  .aboutProject__listElement {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .aboutProject__progress {
+    margin-top: 93px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutProject__info {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .aboutProject__list {
+    max-width: fit-content;
+  }
+
+  .aboutProject__progress {
+    margin-top: 60px;
+    font-size: 11px;
+    grid-template-columns: 1.8fr 3.2fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .aboutProject {
+    padding: 70px 18px 70px 18px;
+  }
+
+  .aboutProject__title {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -.8px;
+  }
+
+  .aboutProject__stroke {
+    margin: 28px 0 60px 0;
+  }
+
+  .aboutProject__list {
+    font-size: 18px;
+    line-height: 22px;
+    /*max-width: 284px;*/
+  }
+
+  .aboutProject__listElement {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutProject__line {
+    height: 35px;
+  }
+
+  .aboutProject__caption {
+    margin-top: 10px;
+    line-height: 13px;
+  }
+}

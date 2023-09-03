@@ -1,0 +1,33 @@
+.movieCard__button {
+  margin-top: 9px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+}
+.moviesCard__saveButton {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../shared/assets/images/icons/save-min.svg");
+  transition: all .1s ease-out;
+}
+
+.moviesCard__saveButton:hover {
+  background: url("../../../../../shared/assets/images/icons/save-active-min.svg");
+}
+
+.moviesCard__saveButton:active {
+  background-image: url("../../../../../shared/assets/images/icons/save-active-min.svg");
+  opacity: 60%;
+}
+
+.moviesCard__saveButton_active {
+  background: url("../../../../../shared/assets/images/icons/save-active-min.svg");
+}
+
+@media screen and (max-width: 480px){
+  .movieCard__button {
+    margin-top: 7px;
+  }
+}

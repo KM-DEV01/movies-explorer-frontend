@@ -1,0 +1,171 @@
+.aboutMe {
+  padding: 110px 70px 50px 70px;
+}
+
+.aboutMe__title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -.8px;
+  line-height: 27px;
+}
+
+.aboutMe__stroke {
+  border: solid 1px #DADADA;
+  margin: 21px 0 66px 0;
+}
+
+.aboutMe__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutMe__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.aboutMe__name {
+  font-size: 50px;
+  letter-spacing: -.8px;
+  line-height: 58px;
+  margin: 0;
+}
+
+.aboutMe__caption {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 18px;
+}
+
+.aboutMe__text {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 26px;
+}
+
+.aboutMe__link {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 99px 0 0 0;
+  line-height: 17px;
+}
+
+.aboutMe__avatar {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1058px) {
+  .aboutMe__info {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  .aboutMe {
+    padding: 90px 50px 45px 50px;
+  }
+
+  .aboutMe__info {
+    max-width: 364px;
+  }
+
+  .aboutMe__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .aboutMe__caption {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+
+  .aboutMe__text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 20px;
+  }
+
+  .aboutMe__link {
+    margin-top: 87px;
+  }
+
+  .aboutMe__avatar {
+    height: 307px;
+    width: 255px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .aboutMe__avatar {
+    height: 257px;
+    width: 195px;
+    margin-left: 26px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutMe__name {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .aboutMe__caption {
+    line-height: 16px;
+    font-size: 11px;
+  }
+
+  .aboutMe__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutMe__link {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .aboutMe__container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .aboutMe__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .aboutMe__stroke {
+    margin: 28px 0 60px 0;
+  }
+
+  .aboutMe__avatar {
+    height: 352px;
+    width: 292px;
+    margin: 0;
+  }
+
+  .aboutMe__name {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 40px;
+  }
+
+  .aboutMe__caption {
+    margin-top: 20px;
+  }
+
+  .aboutMe__info {
+    max-width: 292px;
+  }
+  .aboutMe {
+    padding: 70px 14px 35px 14px;
+  }
+}

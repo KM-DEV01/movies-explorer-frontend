@@ -1,0 +1,82 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 158px;
+}
+
+.loginForm__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.loginForm__button {
+  border: none;
+  background-color: #4285F4;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  padding: 13px 0 15px 0;
+}
+
+.loginForm__button:hover {
+  background-color: #1569f4;
+}
+
+.loginForm__button:disabled, .loginForm__button:disabled:hover  {
+  background-color: #424242;
+  color: #8B8B8B;
+  cursor: default;
+}
+
+.loginForm__links {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.loginForm__caption {
+  color: #8B8B8B;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.loginForm__link {
+  font-size: 14px;
+  line-height: 17px;
+  color: #4285F4;
+}
+
+@media screen and (max-width: 480px) {
+  .loginForm {
+    gap: 247px;
+  }
+
+  .loginForm__buttons {
+    gap: 15px;
+  }
+
+  .loginForm__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .loginForm__caption {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .loginForm__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

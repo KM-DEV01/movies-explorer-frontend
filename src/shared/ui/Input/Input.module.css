@@ -1,0 +1,40 @@
+.label {
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border-radius: 8px;
+  background: #2F2F2F;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 10px 0;
+  color: #ffffff;
+  box-sizing: border-box;
+  height: 46px;
+  transition: all .1s ease-out;
+  border: solid 2px #2F2F2F;
+}
+
+.input:hover, .input:focus {
+  background: #202020;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input_error {
+  color: #EE3465;
+  border-color: #EE3465;
+}
+
+.input_error_text {
+  text-align: center;
+  color: #EE3465;
+  font-size: 11px;
+}
