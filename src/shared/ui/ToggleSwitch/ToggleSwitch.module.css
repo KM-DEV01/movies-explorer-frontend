@@ -1,0 +1,63 @@
+.toggleSwitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggleSwitch__switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.toggleSwitch__switchCheckbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSwitch__switchSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8B8B8B;
+  border-radius: 20px;
+  transition: .4s;
+}
+
+.toggleSwitch__switchSlider:before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  left: 6px;
+  bottom: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.toggleSwitch__switchCheckbox:checked + .toggleSwitch__switchSlider {
+  background-color: #3DDC84;
+}
+
+.toggleSwitch__switchCheckbox:checked + .toggleSwitch__switchSlider:before {
+  transform: translateX(16px);
+}
+
+.toggleSwitch__property {
+  margin-left: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 520px){
+  .toggleSwitch__property {
+    font-size: 11px;
+  }
+}

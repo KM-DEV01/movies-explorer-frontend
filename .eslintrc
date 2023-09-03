@@ -1,19 +1,57 @@
 {
+  "root": true,
   "env": {
-    "es2021": true,
-    "browser": true
+    "browser": true,
+    "es2021": true
   },
-  "extends": ["airbnb", "airbnb/hooks"],
-  "overrides": [
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "overrides": [
+    {
+      "files": [
+        "./src/pages/**/ui/**/*.tsx",
+        "**/*.config.ts"
+      ],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
+  "plugins": [
+    "react",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
   "rules": {
-    "no-underscore-dangle": "off",
-    "linebreak-style": "off",
-    "react/prop-types": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-props-no-spreading": "off"
+    "import/no-unresolved": "off",
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default-member": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }

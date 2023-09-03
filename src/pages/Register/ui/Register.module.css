@@ -1,0 +1,21 @@
+.registerPage {
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+  margin: 0 auto;
+  padding: 70px 0;
+  gap: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .registerPage {
+    padding: 232px 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .registerPage {
+    padding: 56px 30px 30px 30px;
+    gap: 80px;
+  }
+}

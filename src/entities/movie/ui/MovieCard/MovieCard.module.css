@@ -1,0 +1,178 @@
+.movieCard {
+  position: relative;
+  border-radius: 6px;
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all .1s ease-out;
+}
+
+.movieCard__link {
+  display: contents;
+  color: #ffffff;
+}
+
+.movieCard__imageContainer {
+  height: 203px;
+  overflow: hidden;
+}
+
+.movieCard__thumbnail {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform .1s ease-out;
+}
+
+.movieCard:hover .movieCard__thumbnail{
+  transform: scale(1.1);
+}
+
+.moviesCard__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px 16px;
+}
+
+.movieCard__info {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin-top: 16px;
+}
+
+.movieCard__title {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 290px;
+}
+
+.movieCard__text {
+  font-size: 11px;
+  color: #8B8B8B;
+  line-height: 11px;
+}
+
+/*МЕДИА ЗАПРОСЫ*/
+/*В 3 ряда*/
+@media screen and (max-width: 1180px) {
+  .movieCard__title {
+    max-width: 230px;
+  }
+  .movieCard__imageContainer {
+    height: 163px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .movieCard__title {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 871px) {
+  .movieCard__title {
+    max-width: 178px;
+  }
+  .movieCard__imageContainer {
+    height: 123px;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .movieCard__imageContainer {
+    height: 119px;
+  }
+}
+
+/*В 2 ряд*/
+@media screen and (max-width: 768px){
+  .movies-cards {
+    padding-bottom: 170px;
+  }
+
+  .movieCard__imageContainer {
+    height: 190px;
+  }
+
+  .movieCard__title {
+    line-height: 16px;
+    max-width: 200px;
+  }
+
+  .moviesCard__container {
+    padding: 0 14px 14px 14px;
+  }
+
+  .movieCard__info {
+    margin-top: 14px;
+  }
+
+  .movieCard__text {
+    line-height: 11px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .movieCard__imageContainer {
+    height: 158px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .movieCard__imageContainer {
+    height: 135px;
+  }
+
+  .movieCard__title {
+    max-width: 188px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .movieCard__imageContainer {
+    height: 110px;
+  }
+
+  .movieCard__title {
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 160px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movieCard__title {
+    max-width: 130px;
+  }
+}
+
+/*В 1 ряд*/
+@media screen and (max-width: 480px){
+  .movieCard__imageContainer {
+    height: 168px;
+  }
+
+  .movieCard__title {
+    max-width: 240px;
+  }
+
+  .moviesCard__container {
+    padding: 0 10px 14px 14px;
+  }
+
+  .movieCard__info {
+    gap: 14px;
+  }
+
+  .movieCard__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
